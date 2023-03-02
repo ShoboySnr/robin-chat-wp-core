@@ -4,3 +4,4 @@ vendor/*
 src/dist
 composer.lock
 .DS_Store
+.env
