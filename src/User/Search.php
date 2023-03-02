@@ -17,15 +17,14 @@ class Search {
             <div class="robin-chat-msg-overlay-list-bubble-search__input-container">
               <label class="robin-chat-ally-text" for="robin-chat-msg-overlay-list-bubble-search__search-typeahead-input"><?php echo __('Search anyone, group or message', 'robin-chat'); ?></label>
               <span class="robin-chat-msg-overlay-list-search__search-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"><path stroke="#ACB1BD" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4" d="M9.167 15.833a6.667 6.667 0 1 0 0-13.333 6.667 6.667 0 0 0 0 13.333ZM17.5 17.5l-3.625-3.625"/></svg>
+                <?php echo ROBIN_CHAT_ICON_SEARCH_ICON; ?>
               </span>
               <input type="text" id="robin-chat-msg-overlay-list-bubble-search__search-typeahead-input" class="robin-chat-msg-overlay-list-search__search-typeahead-input" placeholder="<?php echo __('Search anyone, group or message', 'robin-chat'); ?>" autocomplete="off" />
             </div>
           <div class="robin-chat-msg-overlay-list-bubble-search__filter-chat robin-chat-msg-toggle-dropdown-contents">
-            <button class="robin-chat-msg-overlay-bubble-header__button robin-chat-dropdown robin-chat-filter-chat" value="chat-settings-dropdown">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="14" fill="none"><path stroke="#83899C" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16M4 7h10m-8 6h6"/></svg>
-            </button>
             <?php
+               
+                    echo \RobinChat\Core\User\Init::get_instance()->button_icon_html('chat-settings-dropdown', ROBIN_CHAT_ICON_FILTER_ICON, 'robin-chat-dropdown robin-chat-filter-chat');
       
                 $chat_message_settings = [
                     [

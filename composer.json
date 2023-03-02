@@ -15,7 +15,8 @@
       "RobinChat\\Core\\": "src/"
     },
     "files": [
-      "src/Functions/functions.php"
+      "src/Functions/functions.php",
+      "src/Functions/icons.php"
     ]
   },
   "autoload-dev": {
