@@ -1,0 +1,274 @@
+@import url('https://fonts.cdnfonts.com/css/google-sans');
+
+.robin-chat-wrapper {
+    margin-left: -20px;
+    font-family: 'Product Sans', sans-serif;
+}
+
+.robin-chat-wrapper a {
+    text-decoration: none;
+}
+
+/* stylish header */
+.rc-admin-banner {
+    border-bottom: 1px solid rgba(83, 95, 137, 0.1);
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.rc-admin-banner .rc-admin-banner__logo {
+    padding-right: 2rem;
+}
+
+.rc-admin-banner .rc-settings-page-menu {
+    padding-left: 2.5rem;
+    border-left: 1px solid rgba(83, 95, 137, 0.1);
+}
+
+.rc-admin-banner .rc-settings-page-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.rc-admin-banner .rc-settings-page-menu ul li {
+    margin: 0;
+}
+
+.rc-admin-banner .rc-settings-page-menu ul li a {
+    text-decoration: none;
+    color: rgba(83, 95, 137, 0.5);
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0 10px;
+    line-height: 5.312rem;
+    display: flex;
+}
+
+.rc-admin-banner .rc-settings-page-menu ul li a:hover {
+    color: #D38450;
+    border-bottom: 1px solid #D38450;
+}
+
+.rc-admin-banner .rc-settings-page-menu ul li.active a {
+    color: #D38450;
+    font-weight: 700;
+    border-bottom: 1px solid #D38450;
+}
+
+.robin-chat-wrapper .rc-connect-robin {
+    max-width: 680px;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.robin-chat-wrapper .rc-connect-robin .title-wrapper h3 {
+    font-size: 1.5rem;
+    color: #566BA0;
+    font-weight: 500;
+}
+
+.robin-chat-wrapper .rc-connect-robin .title-wrapper p {
+    font-size: 1rem;
+    color: #A3AFCB;
+}
+
+.robin-chat-wrapper .rc-connect-robin .featured-image {
+    margin: 3.437rem 0 1.5rem;
+}
+
+.robin-chat-wrapper .rc-connect-robin hr  {
+    border: 1px solid rgba(83, 95, 137, 0.1);
+    width: 100%;
+}
+
+.robin-chat-wrapper .rc-connect-robin .content {
+    margin-top: 3.125rem;
+}
+
+.robin-chat-wrapper .rc-connect-robin .content h4 {
+    font-size: 1.5rem;
+    color: #566BA0;
+    font-weight: 500;
+}
+
+.robin-chat-wrapper .rc-connect-robin .content ol {
+    list-style-position: inside;
+}
+
+.robin-chat-wrapper .rc-connect-robin .content ol li {
+    font-size: 1rem;
+    color: #A3AFCB;
+    margin-bottom: 0.85rem;
+}
+
+.robin-chat-wrapper .rc-connect-robin .content ol li a {
+    color: #4568D1;
+    text-decoration: none;
+}
+
+.robin-chat-form {
+    background-color: #FFFFFF;
+    border: 1px solid #E7E9FF;
+    padding: 1.5rem 3rem;
+    width: 100%;
+    max-width: 580px;
+    border-radius: 5px;
+    margin: 2rem auto;
+    text-align: left;
+}
+
+.robin-chat-form.connection-error {
+    border-top: 2px solid #EE4036;
+    max-width: 400px;
+    padding: 3.125rem 5.437rem;
+}
+
+.robin-chat-form .rc-form-group {
+    margin-bottom: 1.25rem;
+}
+
+.robin-chat-form label {
+    font-size: 1rem;
+    display: block;
+    color: rgba(86, 107, 160, 0.8);
+}
+
+.robin-chat-form input {
+    width: 100%;
+    padding: 1.375rem 1.562rem;
+    color: #566BA0;
+    background-color: rgba(231, 233, 255, 0.5);
+    border: 1px solid #566BA0;
+    opacity: 0.5;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.robin-chat-form input::placeholder {
+    color: rgba(86, 107, 160, 0.5);
+}
+
+.robin-chat-form .rc-form-button {
+    background: #4568D1;
+    border-radius: 30px;
+    padding: 0.562rem 2.187rem;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.robin-chat-wrapper .rc-connect-robin .content .rc-footnote {
+    max-width: 580px;
+    margin: 0.9rem auto;
+}
+
+.robin-chat-wrapper .rc-connect-robin .content .rc-footnote a {
+    color: #4568D1;
+    text-decoration: none;
+}
+.robin-chat-wrapper .rc-connect-robin .content .rc-footnote p {
+    font-size: 1rem;
+    color: #A3AFCB;
+}
+
+.robin-chat-notice p {
+    opacity: 0.8;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.robin-chat-notice.notice-success p {
+    color: #15AE73;
+}
+
+.robin-chat-notice.notice-error p {
+    color: #d63638;
+}
+
+.rc-account-form-connected {
+    text-align: center;
+}
+
+.rc-account-form-connected h3 {
+    color: #566BA0;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.rc-account-form-connected p {
+    color: #A3AFCB;
+    font-size: 1rem;
+    margin-bottom: 2.125rem;
+}
+
+.rc-account-form-connection-error {
+    text-align: left;
+}
+
+.rc-account-form-connection-error h3 {
+    color: #EE4036;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.rc-account-form-connection-error p {
+    color: #404961;
+    font-size: 1rem;
+    max-width: 16.5rem;
+    line-height: 1.5;
+    margin-bottom: 1.875rem;
+    opacity: 0.5;
+}
+
+.robin-chat-wrapper .wrap {
+    padding: 1rem 2rem;
+}
+
+.robin-chat-account-premium-header {
+    margin-left: 5rem;
+    width: 100%;
+}
+
+.robin-chat-account-premium-header a {
+    text-decoration: none;
+    color: #4568D1;
+    font-weight: 500;
+    text-transform: capitalize;
+    font-size: 1rem;
+}
+
+.robin-chat-account-premium-header a:hover {
+    font-weight: bold;
+}
+
+.robin-chat-user-account {
+    width: 100%;
+    text-align: right;
+}
+
+.robin-chat-user-account a {
+    color: rgba(86, 107, 160, 0.5);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.robin-chat-user-account a:hover {
+    font-weight: bold;
+}
+
+
+.robin-chat-user-account a svg {
+    margin-left: 12px;
+}
+

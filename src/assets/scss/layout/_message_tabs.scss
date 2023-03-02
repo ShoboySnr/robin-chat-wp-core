@@ -1,0 +1,57 @@
+@use 'helpers' as *;
+
+.robin-chat {
+  &-msg-overlay-list-bubble__top-static-area {
+    &-tabs-size {
+      position: relative;
+      display: block;
+    }
+
+    &-tablist {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      border-bottom: 1px solid map-get($colors, 'grey-shade-8');
+      position: relative;
+      overflow-x: auto;
+      justify-content: center;
+      font-size: 14px;
+      font-family: map-get($fonts, 'satoshi');
+
+      button.robin-chat-tab {
+        font-size: 14px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        font-weight: 500;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        color: map-get($colors, 'grey-shade-6');
+
+        &.robin-chat-tab-selected {
+          &:before {
+            content: "";
+            width: 100%;
+            position: absolute;
+            border: 1px solid map-get($colors, 'orange');
+            bottom: 0;
+            z-index: 2;
+          }
+        }
+
+        &:hover {
+          &:before {
+            content: "";
+            width: 100%;
+            position: absolute;
+            border: 1px solid map-get($colors, 'orange');
+            bottom: 0;
+            z-index: 2;
+          }
+        }
+      }
+    }
+  }
+}

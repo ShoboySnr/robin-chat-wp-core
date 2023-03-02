@@ -1,0 +1,51 @@
+@use 'helpers' as *;
+
+.robin-chat {
+  &-msg-overlay-list-bubble {
+    &__content {
+
+    }
+
+    &__default-conversation-container {
+      .visually-hidden {
+        display: block!important;
+        border: 0!important;
+        clip: rect(0 0 0 0)!important;
+        height: 1px!important;
+        margin: -1px!important;
+        overflow: hidden!important;
+        padding: 0!important;
+        position: absolute!important;
+        white-space: nowrap!important;
+        width: 1px!important;
+      }
+    }
+
+    &-empty-message {
+      height: 100%;
+      padding: 82px 10%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      &__text-container {
+        display: grid;
+        grid-template-columns: 2fr 30px;
+        width: 100%;
+        max-width: 282px;
+        align-items: flex-start;
+        margin-top: 30px;
+
+        p {
+          margin: 0;
+          text-align: center;
+          font-size: 1rem;
+          color: map-get($colors, 'grey-shade-6');
+        }
+      }
+    }
+  }
+
+
+}

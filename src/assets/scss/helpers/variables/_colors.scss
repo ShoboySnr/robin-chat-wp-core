@@ -1,0 +1,21 @@
+//Global Colors - update theme.json manually to display these colors in block options
+$colors : (
+    'white' : #FFFFFF,
+    'black' : #000000,
+    'primary' : #004E89,
+    'orange' : #F05A28,
+    'grey' : #DADADA,
+    'grey-shade-7': #ACB1BD,
+    'grey-shade-8': #CDD0D7,
+    'grey-shade-6': #83899C,
+    'dark-05': #EFEFEF,
+    'transparent' : transparent,
+);
+
+//Font Colors
+$body_font_color: map-get($colors, 'primary');
+
+//Background Colors
+$chat_background_container_color: var(--robin-chat-color-background-container, map-get($colors, 'white'));
+
+// Link Colors

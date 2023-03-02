@@ -1,0 +1,68 @@
+@use 'helpers' as *;
+
+.robin-chat {
+  &-msg-overlay-list {
+    &-bubble-search {
+      display: grid;
+      grid-template-columns: 1fr 40px;
+      flex-direction: row;
+      width: 100%;
+      align-items: center;
+      grid-gap: 0;
+
+      &__input-container {
+        position: relative;
+        background: 0 0;
+        display: flex;
+        width: 100%;
+      }
+    }
+
+    &-search__search {
+
+      &-typeahead-input {
+        margin: 0.8rem;
+        padding: 12px 44px;
+        background-color: map-get($colors, 'dark-05');
+        font-size: 16px;
+        color: map-get($colors, 'grey-shade-6');
+        border: none;
+        display: flex;
+        align-items: center;
+        border-radius: 30px;
+        width: 100%;
+        font-family: map-get($fonts, 'satoshi');
+
+        &::placeholder {
+          font-size: 16px;
+          font-family: map-get($fonts, 'satoshi');
+        }
+
+        &:focus,
+        &:active {
+          outline: transparent;
+        }
+      }
+
+      &-icon {
+        display: flex;
+        position: absolute;
+        top: 1.6rem;
+        left: 2rem;
+        color: map-get($colors, 'grey-shade-7');
+      }
+    }
+  }
+
+
+  &-ally-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px 1px);
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+}

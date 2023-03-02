@@ -1,0 +1,212 @@
+@use 'helpers' as *;
+
+.robin-chat {
+  &-msg-overlay-container {
+    height: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    bottom: 0;
+    right: 0;
+    overflow: visible;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    font-family: map-get($fonts, 'satoshi');
+  }
+
+  &-msg-toggle-dropdown-contents {
+    position: relative;
+  }
+
+  &-msg-overlay {
+
+    &-button {
+      background-color: map-get($colors, 'transparent');
+      border: none;
+      font-size: 20px;
+      color: map-get($colors, 'black');
+      width: 100%;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      font-family: map-get($fonts, 'satoshi');
+    }
+
+    &-list-bubble {
+      display: flex;
+      flex-direction: column;
+      height: calc(100vh - 174px);
+      flex: 0 0 430px;
+      width: 430px;
+      min-width: 0;
+      background: $chat_background_container_color;
+      transform: translateY(0);
+      animation: fade-in 167ms cubic-bezier(.4, 0, 1, 1);
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 167ms;
+      border-radius: 20px 20px 0 0;
+      box-shadow: 0 0 5px 0 rgba(218, 218, 218, 0.75);
+      margin-left: 16px;
+
+      &--is-minimized {
+        transform: translateY(100%) translateY(-58px);
+      }
+    }
+
+    &-bubble-header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0 0.8rem 0 0;
+      position: relative;
+      min-height: 58px;
+      border-bottom: 1px solid map-get($colors, 'grey');
+
+      &__button_controls {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+      }
+
+      &__details {
+        padding-left: 0.8rem;
+        padding-right: 0;
+        width: 100%;
+        align-items: center;
+        display: flex;
+        height: 100%;
+      }
+
+      &__controls {
+        display: flex;
+
+        &-dropdown {
+          position: relative;
+
+          &-content {
+            margin-right: -8px;
+            position: absolute;
+            background-color: map-get($colors, 'white');
+            visibility: hidden;
+            opacity: 0;
+            z-index: -1;
+            padding: 4px 0;
+            transition: visibility 0s linear 167ms,opacity 167ms cubic-bezier(.4,0,1,1) 0s,z-index 0s linear 167ms;
+            display: inline-block;
+            min-width: 193px;
+            max-width: 26.4rem;
+            max-height: 54.8rem;
+            box-sizing: border-box;
+            border: 1px solid map-get($colors, 'grey-shade-8');
+            border-radius: 16px;
+
+            &.robin-chat-controls-dropdown-content-justification {
+              &-right {
+                left: auto;
+                right: 0;
+              }
+
+              &-left {
+                left: 0;
+                right: auto;
+              }
+            }
+
+            &.robin-chat-controls-dropdown-content-placement {
+              &-top {
+                top: auto;
+                bottom: calc(100% + 8px);
+              }
+
+              &-bottom {
+                top: calc(100% + 5px);
+                bottom: auto;
+              }
+            }
+
+            &.robin-chat-dropdown-content--is-open {
+              transition: visibility 0s linear 25ms, z-0s linear 25ms, opacity 334ms cubic-bezier(0, 0, 0.2, 1), 25ms;
+              opacity: 1;
+              visibility: visible;
+              z-index: 999;
+            }
+
+            &-inner {
+              ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+
+                li {
+                  border-bottom: 1px solid map-get($colors, 'dark-05');
+                  button {
+                    padding: 14px 16px;
+                    font-size: 14px;
+                    font-weight: 500;
+                    font-family: map-get($fonts, 'satoshi');
+
+                    .full-width {
+                      display: flex;
+                      align-items: center;
+                      justify-content: space-between;
+                      width: 100%;
+
+                      span {
+                        display: inline-flex;
+                      }
+                    }
+                  }
+
+                  &:last-of-type {
+                    border-bottom: none;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &__button {
+        background-color: map-get($colors, 'transparent');
+        border: none;
+        font-size: 20px;
+        color: map-get($colors, 'black');
+        width: 100%;
+        text-align: left;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        font-family: map-get($fonts, 'satoshi');
+
+        &.robin-chat-dropdown {
+          padding: 10px;
+        }
+      }
+
+      &__minimized {
+        display: flex;
+        height: 100%;
+        border-left: 0.6px solid map-get($colors, 'grey');
+        padding-left: 14px;
+        margin-left: 14px;
+      }
+    }
+  }
+  &-msg-unread-messages {
+    background-color: map-get($colors, 'orange');
+    margin-left: 4px;
+    border-radius: 50%;
+    padding: 0 8px;
+    font-size: 14px;
+    line-height: 24px;
+    color: map-get($colors, 'white');
+    align-items: center;
+    justify-content: center;
+    display: inline-flex;
+  }
+}
