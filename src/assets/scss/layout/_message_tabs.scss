@@ -2,6 +2,12 @@
 
 .robin-chat {
   &-msg-overlay-list-bubble__top-static-area {
+    display: block;
+
+    &__is_close {
+      display: none;
+    }
+
     &-tabs-size {
       position: relative;
       display: block;

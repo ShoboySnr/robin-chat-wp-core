@@ -10,11 +10,22 @@
       align-items: center;
       grid-gap: 0;
 
+      &__is_close {
+        display: none;
+      }
+
       &__input-container {
         position: relative;
         background: 0 0;
         display: flex;
         width: 100%;
+      }
+
+      &__filter-chat {
+        .robin-chat-dropdown-content--is-open {
+          right: 20px;
+          top: 20px;
+        }
       }
     }
 

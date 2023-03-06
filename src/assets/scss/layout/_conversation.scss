@@ -2,8 +2,11 @@
 
 .robin-chat {
   &-msg-overlay-list-bubble {
-    &__content {
-
+    &__conversations-list {
+      padding: 11px 20px;
+      //height: 423px;
+      height: max-content;
+      overflow-y: scroll;
     }
 
     &__default-conversation-container {
@@ -22,8 +25,7 @@
     }
 
     &-empty-message {
-      height: 100%;
-      padding: 82px 10%;
+      margin-top: 25px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -43,6 +45,339 @@
           font-size: 1rem;
           color: map-get($colors, 'grey-shade-6');
         }
+      }
+    }
+
+    &__chat-messages {
+      margin-bottom: 20px;
+
+      p {
+        margin: 0;
+        padding: 0;
+      }
+
+      &-list {
+        padding: 12px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        overflow-x: scroll;
+
+        &-grouped-profile-picture {
+          display: flex;
+          align-items: center;
+        }
+
+        &-featured-image {
+          img {
+            width: 44px;
+            height: 44px;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+
+        &-names {
+          margin-left: 8px;
+          width: 100%;
+          max-width: 230px;
+
+          .robin-chat-full-name {
+            p {
+              margin: 0;
+              font-family: map-get($fonts, 'satoshi');
+              font-size: 18px;
+              font-weight: 500;
+              color: map-get($colors, 'grey-shade-1');
+            }
+          }
+
+          .robin-chat-text-message {
+            p {
+              font-size: 16px;
+              color: map-get($colors, 'grey-shade-6');
+              font-family: map-get($fonts, 'satoshi');
+              margin: 0;
+            }
+          }
+
+          .robin-chat-image-message {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 3px;
+
+            p {
+              font-size: 16px;
+              color: map-get($colors, 'grey-shade-6');
+              margin: 0;
+              padding: 0;
+            }
+          }
+        }
+
+        &-notifications {
+          color: map-get($colors, 'grey-shade-6');
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+
+          &__time {
+            font-size: 14px;
+            p {
+              margin: 0;
+              padding: 0;
+            }
+          }
+
+          &__status {
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            .robin-chat-message-unread {
+              padding: 0 8px;
+              background-color: map-get($colors, 'orange');
+              line-height: 24px;
+              border-radius: 50%;
+              color: map-get($colors, 'white');
+            }
+
+            .robin-chat-message-receipt {
+              text-transform: capitalize;
+              color: map-get($colors, 'grey-shade-5');
+            }
+          }
+        }
+      }
+
+      &-group-selection {
+        margin-right: 0;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: visibility 0s linear 250ms, opacity 100ms, ease-in-out 150ms;
+
+        &__is-open {
+          width: max-content;
+          height: max-content;
+          margin-right: 10px;
+          opacity: 1;
+          transition: visibility 0s linear 250ms, opacity 250ms, ease-in-out 250ms;
+          visibility: visible;
+        }
+      }
+
+      &-grouped-selection {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        transition: 300ms transform ease-in;
+        position: relative;
+        transform: translateY(-200%);
+        overflow: hidden;
+        height: 0;
+
+        &__is-open {
+          transform: translateY(0);
+          height: auto;
+        }
+
+        &__select-all {
+          font-size: 16px;
+          line-height: 28px;
+          color: map-get($colors, 'deep-black');
+          width: max-content;
+        }
+
+        &__action-links {
+          display: flex;
+          gap: 20px;
+
+          button {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 12px;
+            color: map-get($colors, 'dark-03');
+          }
+        }
+      }
+    }
+
+    &__new-chats {
+      padding: 10px 0;
+
+      &-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        &-name {
+          h2 {
+            font-size: 20px;
+            font-weight: 500;
+            color: map-get($colors, 'black');
+            margin: 0;
+            padding: 0;
+          }
+        }
+
+        &-close-chat {
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+      }
+
+      .robin-chat-msg-overlay-list-search__search-typeahead-input {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .robin-chat-msg-overlay-list-search__search-icon {
+        left: 1rem;
+      }
+
+      &-action-links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: block;
+
+        &__is_close {
+          display: none;
+        }
+
+        &-new-group-chat {
+          display: flex;
+          gap: 8px;
+          color: map-get($colors, 'orange');
+          font-size: 18px;
+          font-weight: 500;
+          align-items: flex-start;
+          width: 100%;
+
+          .icon {
+            background-color: map-get($colors, 'tone-orange');
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            padding: 12px;
+            margin-right: 8px;
+          }
+
+          .text {
+            padding: 15px 0;
+            width: 100%;
+            text-align: left;
+            border-bottom: 1px solid map-get($colors, 'dark-05');
+          }
+        }
+      }
+
+    }
+
+    &__contacts-list {
+      list-style: none;
+      margin: 17px 0;
+      padding: 0;
+      height: 310px;
+      overflow-y: scroll;
+
+      li {
+        margin-bottom: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .robin-chat-action-button {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        grid-gap: 8px;
+        grid-template-columns: 1fr 100%;
+        text-align: left;
+        font-size: 18px;
+        color: map-get($colors, 'grey-shade-1');
+        cursor: pointer;
+
+        .image {
+          img {
+            height: 44px;
+            width: 44px;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+
+        .name {
+          padding-top: 16px;
+          padding-bottom: 25px;
+          width: 100%;
+          border-bottom: 1px solid map-get($colors, 'dark-05');
+        }
+      }
+    }
+
+    &__selected-group-members {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      list-style: none;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      width: 100%;
+      overflow-y: scroll;
+      gap: 32px;
+
+      &.is-selected {
+        padding-bottom: 16px;
+        border-bottom: 1px solid map-get($colors, 'dark-05');
+      }
+
+      li {
+        position: relative;
+
+        label {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .image {
+          position: relative;
+
+          img {
+            width: 64px;
+            height: 64px;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+        .name {
+          display: block;
+          line-height: 1;
+          text-align: center;
+          white-space: nowrap;
+        }
+      }
+
+      &-remove {
+        position: absolute;
+        background-color: map-get($colors, 'grey-shade-8') !important;
+        padding: 7.5px !important;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        top: 0;
+        right: -10px;
       }
     }
   }

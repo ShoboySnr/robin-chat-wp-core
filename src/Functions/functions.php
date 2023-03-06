@@ -144,6 +144,40 @@ function minify_js($input) {
         $input);
 }
 
-function get_microtime(){
+function get_microtime()
+{
     return (int) str_pad(str_replace('.', '', microtime(true)) , 14, '0', STR_PAD_RIGHT);
+}
+
+function contact_group_directory()
+{
+    $index_group = [
+        'A' => [],
+        'B' => [],
+        'C' => [],
+        'D' => [],
+        'E' => [],
+        'F' => [],
+        'G' => [],
+        'H' => [],
+        'I' => [],
+        'J' => [],
+        'K' => [],
+        'L' => [],
+        'M' => [],
+        'N' => [],
+        'O' => [],
+        'P' => [],
+        'Q' => [],
+        'R' => [],
+        'S' => [],
+        'T' => [],
+        'U' => [],
+        'V' => [],
+        'W' => [],
+        'X' => [],
+        'Y' => [],
+        'Z' => [],
+        '#' => [],
+    ];
 }

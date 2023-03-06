@@ -24,6 +24,8 @@ if (str_contains(__FILE__, 'robin-chat' . DIRECTORY_SEPARATOR . 'src')) {
     define('ROBIN_CHAT_CORE_URL', ROBIN_CHAT_URL . wp_normalize_path('../' . dirname(substr(__FILE__, strpos(__FILE__, 'robin-chat'))). '/'));
 }
 
+define('ROBIN_CHAT_DIST_URL', ROBIN_CHAT_CORE_URL. 'dist/');
+
 define('ROBIN_CHAT_SETTINGS_DASHBOARD_SLUG', 'robin-chat-dashboard');
 define('ROBIN_CHAT_SETTINGS_USERS_SLUG', 'robin-chat-users');
 define('ROBIN_CHAT_SETTINGS_SETTINGS_SLUG', 'robin-chat-settings');

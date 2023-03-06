@@ -2,9 +2,6 @@
 
 namespace RobinChat\Core\User;
 
-
-use RobinChat\Core\Core;
-
 define('ROBIN_CHAT_USER_TEMPLATES_DIR', __DIR__.'/templates/' );
 
 class Init {
